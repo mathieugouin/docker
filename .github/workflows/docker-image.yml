@@ -19,4 +19,6 @@ jobs:
       # --file Dockerfile
       #--force-rm: Always remove intermediate containers
       #--progress=plain
-      run: docker build nanoserver --force-rm --rm --no-cache --tag my-image-name:$(date +%s)
+      run: |
+        docker build servercore --force-rm --rm --no-cache --tag servercore:$(date +%s)
+        docker build nanoserver --force-rm --rm --no-cache --tag nanoserver:$(date +%s)
