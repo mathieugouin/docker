@@ -23,7 +23,22 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.13"
-    - name: test linux
+    - name: Info
       run: |
         python --version
         python -m pip --version
+        python -m pip list
+    - name: Install first
+      run: |
+        python -m pip install PyPDF2
+        python -m pip list
+        python -c "import PyPDF2 as p; print(p.__file__)"
+    - name: Uninstall
+      run: |
+        python -m pip uninstall -y PyPDF2
+        python -m pip list
+    - name: Install 2nd time
+      run: |
+        python -m pip install PyPDF2
+        python -m pip list
+        python -c "import PyPDF2 as p; print(p.__file__)"
