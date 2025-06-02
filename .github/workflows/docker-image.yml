@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build1:
+  nanoserver:
 
     runs-on: windows-latest
 
@@ -21,7 +21,7 @@ jobs:
       run: |
         docker build nanoserver --force-rm --rm --no-cache --tag nanoserver:$(date +%s)
 
-  build2:
+  servercore:
 
     runs-on: windows-latest
 
